@@ -1,2 +1,5 @@
-# html-connect
-Connect two html elements with a line
+# HTML Connect
+**Connecting two html elements while avoiding others**
+
+---
+![Demo](demo/demo.gif)
