@@ -103,6 +103,8 @@ right connector from last child*/
 Thanks :)*/
 
 
+/* HTML Connect CSS */
+
 .selected {
     background: #c8e4f8; color: #000; border: 1px solid #94a0b4;
 }
@@ -117,6 +119,6 @@ Thanks :)*/
     -webkit-transform-origin-y: 0;
 }
 
-.removed {
-    display: none !important;
+a:hover {
+    cursor: pointer;
 }
