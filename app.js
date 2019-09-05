@@ -1,5 +1,20 @@
+/*
+* @Author: Mesolaries
+* @Date:   2019-09-03 16:38:45
+* @Last Modified by:   Emil
+* @Last Modified time: 2019-09-05 10:23:40
+*/
+
 // Drawing line functions
 
+/**
+ * [verticalLine description]
+ * @param  {string} elementClass [Starting element html class]
+ * @param  {array}  obstacles    [An array of all obstacles]
+ * @param  {number} count        [Line counting]
+ * @param  {string} hLineDir     [Last horizontal line direction]
+ * @return {any}                 [Horizontal line function or stop executing]
+ */
 function verticalLine(elementClass, obstacles, count, hLineDir) {
     let element = $(elementClass);
     let target = $('.below');
@@ -18,6 +33,7 @@ function verticalLine(elementClass, obstacles, count, hLineDir) {
     const elementYStart = Math.ceil(element.offset().top);
     const elementYEnd = Math.ceil(element.offset().top + element.outerHeight());
 
+    // Starting and ending y position
     let startPos = elementYEnd;
     let endPos = targetYStart;
     /**
@@ -91,6 +107,18 @@ function verticalLine(elementClass, obstacles, count, hLineDir) {
     return horizontalLine(`.line-${count}`, obstacles, count);
 }
 
+/**
+ * [horizontalLine description]
+ *
+ * @param   {string}   elementClass  [Starting element html class]
+ * @param   {array}    obstacles     [An array of all obstacles]
+ * @param   {number}   count         [Line counting]
+ * @param   {boolean}  wentUp        [true if last vertical line was drawen from bottom to top]
+ *
+ * @return  {any}                    [Call horizontalLineLeft function if direction is left ||
+ *                                    Call verticalLine function ||
+ *                                    Stop executing]
+ */
 function horizontalLine(elementClass, obstacles, count, wentUp = false) {
     let element = $(elementClass);
     let target = $('.below');
@@ -178,6 +206,7 @@ function horizontalLine(elementClass, obstacles, count, wentUp = false) {
     return verticalLine(`.line-${count}`, obstacles, count, hLineDir);
 }
 
+
 function horizontalLineLeft(elementClass, obstacles, count, wentUp = false) {
     let element = $(elementClass);
     let target = $('.below');
@@ -261,7 +290,7 @@ function horizontalLineLeft(elementClass, obstacles, count, wentUp = false) {
  /**
 * [elementsInArray description]
 * @param  {string} elements [Jquery selector]
-* @return {[array]}           [Returns all elements in array]
+* @return {array}           [Returns all elements in array]
 */
 function elementsInArray(elements) {
     let elementsArray = [];
@@ -282,7 +311,7 @@ function elementsInArray(elements) {
 
 /**
  * [deleteSelectedElement description]
- * @param  {string} element [Jquery selector]
+ * @param  {string}   element [Jquery selector]
  * @param  {[array]}  array   [All elements array]
  * @return {[array], undefined}          [Returns array without selected element]
  */

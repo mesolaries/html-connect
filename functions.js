@@ -1,3 +1,11 @@
+/*
+* @Author: Mesolaries
+* @Date:   2019-09-03 01:04:26
+* @Last Modified by:   Emil
+* @Last Modified time: 2019-09-05 10:23:29
+*/
+
+
 function createLine(count, vertical = false) {
     $('body').append(`<div class="line line-${count}"></div>`);
     let createdLine = $(`.line-${count}`);
